@@ -1,43 +1,125 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Accordion</title>
+        <title>
+            Grid
+        </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <ul class="accordion">
-            <li>
-                <input type="radio" name="example_accordion" id="section-1" class="accordion__input">
-                <label for="section-1" class="accordion__label">Section 1.</label>
-                <div class="accordion__content">
-                    <h3>Section 1.</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint doloremque accusantium recusandae quis dolorem debitis cupiditate repellendus molestiae facere ex officiis quam impedit, explicabo reiciendis.</p>
+       <header class="header">
+           <h1>Header</h1>
+       </header>
+       <nav class="nav">
+           <ul class="nav-list">
+               <li class="nav-list-item"><a class="nav-link" href="#">Link 1</a></li>
+               <li class="nav-list-item"><a class="nav-link" href="#">Link 2</a></li>
+               <li class="nav-list-item"><a class="nav-link" href="#">Link 3</a></li>
+               <li class="nav-list-item"><a class="nav-link" href="#">Link 4</a></li>
+           </ul>
+       </nav>
+       <main class="grid">
+           <aside class="accordion-menu">
+            <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Accounts
                 </div>
-            </li>
-            <li>
-                <input type="radio" name="example_accordion" id="section-2" class="accordion__input">
-                <label for="section-2" class="accordion__label">Section 2.</label>
-                <div class="accordion__content">
-                    <h3>Section 2.</h3>
-                    <p>Magni quis temporibus earum consequuntur facere id perferendis consectetur explicabo, eum minus sit enim iusto incidunt deserunt quod natus distinctio?</p>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    <ul style="padding-left: 1rem;">
+                      <li>Checking Account *1234</li>
+                      <li>Checking Account *0005</li>
+                      <li>Savings Account *6699</li>
+                      <li>Consumer Loan *7788</li>
+                    </ul>
+                  </div>
                 </div>
-            </li>
-            <li>
-                <input type="radio" name="example_accordion" id="section-3" class="accordion__input">
-                <label for="section-3" class="accordion__label">Section 3.</label>
-                <div class="accordion__content">
-                    <h3>Section 3.</h3>
-                    <p>Accusantium quod quibusdam dicta, molestiae explicabo est tempore asperiores nobis error rem atque deleniti reiciendis aliquid magni, quia fugiat eveniet dolore doloribus temporibus quis alias saepe! Sed amet doloribus perferendis. Est nobis eaque ullam minus incidunt voluptatum placeat? Earum, deserunt cum.</p>
-                    <p>Fuga accusamus velit ratione consectetur nisi vel nemo quaerat laboriosam! Voluptatibus temporibus aspernatur consectetur iste, in deleniti a et aliquam?</p>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Transfer History
                 </div>
-            </li>
-        </ul>
-
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed quis deserunt nisi dolorum veritatis! Sunt pariatur fugiat alias magni? Illo quae fuga odit sequi inventore.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Deposit History
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia porro distinctio consectetur aut deleniti tempora quod velit cupiditate officia mollitia dolores placeat natus hic enim autem aperiam, cumque facilis ratione architecto reiciendis minus ad beatae neque vitae. Iure, id animi?
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Manage My Cards
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero laborum, aliquid debitis pariatur suscipit maiores quos? Nihil corrupti deserunt similique!
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Locations
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum<br />
+                    Dolor sit amet
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Privacy Policy
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    All your data are belong to us.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Terms &amp; Conditions
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero laborum, aliquid debitis pariatur suscipit maiores quos? Nihil corrupti deserunt similique!
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <div class="accordion-item-header">
+                  Acknowledgements
+                </div>
+                <div class="accordion-item-body">
+                  <div class="accordion-item-body-content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus doloribus esse velit recusandae voluptatum reprehenderit nostrum facilis temporibus officia. Deserunt quia numquam unde quo nobis fuga, doloribus esse neque quos?
+                  </div>
+                </div>
+              </div>
+           </aside>
+           <article class="dashboard">
+               
+           </article>
+       </main>
         
-        <script src="" async defer></script>
+        <script src="./script.js" async defer></script>
     </body>
 </html>
