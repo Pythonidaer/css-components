@@ -11,7 +11,7 @@ let spanAdder = ["<span class='black'>", "<span class='counter'>", "</span>"];
 let spanChars = [];
 // Timer span
 let timeInBox = document.getElementById("timer");
-let timeRemaining = 60;
+let timeRemaining = 6;
 let callCountDown;
 
 // Start button
@@ -38,7 +38,6 @@ function timer() {
     // call word function that ends game;
     getWordsCounted();
     alert(`Game over! You typed an average of ${counter} words per minute.`);
-    console.log(counter);
   }
 }
 
