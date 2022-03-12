@@ -9,6 +9,38 @@ let wordsSplit = words.textContent.split("");
 let spanAdder = ["<span class='black'>", "<span class='counter'>", "</span>"];
 // This array will store individual strings wrapped around the above span
 let spanChars = [];
+// Timer span
+let timeInBox = document.getElementById("timer");
+let timeRemaining = 60;
+let callCountDown;
+
+// Start button
+const startBtn = document.querySelector(".startBtn");
+startBtn.addEventListener("click", () => {
+  console.log("Clicked");
+  timer();
+});
+
+// Code copied from my old homework assignment
+// https://github.com/Pythonidaer/CodingQuiz/blob/main/assets/scripts/behavior.js
+// countdown() decreases the time perpetually by calling the timer() - 60-1;
+function countDown() {
+  timeRemaining--;
+  timeInBox.textContent = timeRemaining;
+  timer();
+}
+
+// timer() sets timeout to call the countdown() decreaser until timeRemaining = 0
+function timer() {
+  callCountDown = setTimeout(countDown, 1000);
+  if (timeRemaining < 1) {
+    clearTimeout(callCountDown);
+    // call word function that ends game;
+    getWordsCounted();
+    alert(`Game over! You typed an average of ${counter} words per minute.`);
+    console.log(counter);
+  }
+}
 
 // This loop adds the <span class="black"><span> around each letter
 // For letters only though: no spans are added to the cases
@@ -18,7 +50,10 @@ for (let i = 0; i < words.textContent.length; i++) {
     case ".":
     case ",":
     case "?":
-      //   spanChars.push(words.innerHTML[i]);
+    case ";":
+    case "'":
+    case "!":
+    case "$":
       spanChars.push(spanAdder[1] + words.innerHTML[i] + spanAdder[2]);
       continue;
     default:
@@ -46,10 +81,6 @@ function getWordsCounted() {
   wordsCounted = document.querySelectorAll(
     "span.red, span.counter, span.black"
   );
-  //   Console log each letter one by one with their span and class name
-  //   for (let i = 0; i < wordsCounted.length; i++) {
-  //     console.log(wordsCounted[i]);
-  //   }
 
   for (let i = 0; i < wordsCounted.length; i++) {
     if (Boolean(wordsCounted[i + 1])) {
@@ -58,10 +89,10 @@ function getWordsCounted() {
         wordsCounted[i + 1].classList.value === "counter"
       ) {
         counter += 1;
-        console.log(counter);
       }
     }
   }
+  return counter;
 }
 
 // This demo searches only for the first letter
@@ -71,29 +102,12 @@ document.addEventListener("keydown", (e) => {
     spans[0].classList.toggle("black");
     spans[0].classList.toggle("red");
   }
-  //   else {
-  //     console.log(false);
-  //   }
   getSpans();
-  // getWordsCounted();
 });
-getWordsCounted();
-// yes
 
-// String(words.textContent).substring(1, 4).color = "green";
-// console.log(words.textContent.substring(0, 5));
+/*
+What do I want to do next? 
+I want a user button to start the game
 
-// console.log((words.style.color = "black"));
-// console.log(words.style.color);
-// if (words.style.color == "green") {
-//   console.log(true);
-// } else {
-//   words.style.color = "red";
-// }
-// console.log;
 
-// console.log(words);
-// console.log(words);
-// console.log(words.innerHTML);
-// console.log(words.innerHTML[0]);
-// words.innerHTML[0].style.color = "red";
+*/
