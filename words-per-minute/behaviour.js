@@ -11,7 +11,7 @@ let spanAdder = ["<span class='black'>", "<span class='counter'>", "</span>"];
 let spanChars = [];
 // Timer span
 let timeInBox = document.getElementById("timer");
-let timeRemaining = 6;
+let timeRemaining = 60;
 let callCountDown;
 
 // Start button
