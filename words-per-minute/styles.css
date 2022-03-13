@@ -40,22 +40,21 @@ header h1 {
   text-indent: 2rem;
 }
 
+.btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* Courtesy of https://gradientbuttons.colorion.co/ */
 /* Shadows courtesy of https://getcssscan.com/css-box-shadow-examples */
-.startBtn {
-  display: block;
-  margin: 2rem auto;
+.startBtn,
+.infoBtn {
+  margin: 2rem 0.5rem;
   cursor: pointer;
   text-transform: uppercase;
   padding: 15px 45px;
   border-radius: 10px;
-  color: #fff;
-  background: linear-gradient(
-    to right,
-    rgb(49, 71, 85) 0%,
-    rgb(38, 160, 218) 51%,
-    rgb(49, 71, 85) 100%
-  );
   background-size: 200% auto;
   box-shadow: 0;
   outline: none;
@@ -65,8 +64,30 @@ header h1 {
   font-weight: 600;
 }
 
+.startBtn {
+  color: #fff;
+  background: linear-gradient(
+    to right,
+    rgb(49, 71, 85) 0%,
+    rgb(38, 160, 218) 51%,
+    rgb(49, 71, 85) 100%
+  );
+}
+
+.infoBtn {
+  color: black;
+  background: linear-gradient(
+    to right,
+    rgb(240, 152, 25) 0%,
+    rgb(237, 222, 93) 51%,
+    rgb(240, 152, 25) 100%
+  );
+}
+
 .startBtn:hover,
-.startBtn:focus {
+.startBtn:focus,
+.infoBtn:hover,
+.infoBtn:focus {
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
     rgba(0, 0, 0, 0.09) 0px 32px 16px;

@@ -1,5 +1,4 @@
 "use strict";
-
 // Get the paragraph with the lorem ipsum
 let words = document.querySelector(".words-to-type");
 // Split the paragraph into individual strings array ('e', 'm', ' ', '.' etc.)
@@ -11,16 +10,34 @@ let spanAdder = ["<span class='black'>", "<span class='counter'>", "</span>"];
 let spanChars = [];
 // Timer span
 let timeInBox = document.getElementById("timer");
+// 60-second timer on top of page
 let timeRemaining = 60;
+// will be used to count each word (red char left of counter char = 1 word)
 let callCountDown;
 
+/* ******** BUTTONS START ************* */
 // Start button
 const startBtn = document.querySelector(".startBtn");
 startBtn.addEventListener("click", () => {
-  console.log("Clicked");
   timer();
+  startBtn.disabled = true;
 });
+// How To Play button
+const infoBtn = document.querySelector(".infoBtn");
+infoBtn.addEventListener("click", () => {
+  alert(`WELCOME! HERE IS HOW TO PLAY:
+     1. Click 'START GAME' to begin the 60-second timer
+     2. Type as many words as you can (letters/numbers only)
+     3. When the game ends, words typed per minute pops up
 
+NOTES:
+     4. Not configured for mobile use 😢
+     5. Find me on LinkedIn: jonamichahammo
+  `);
+});
+/* ******** BUTTONS END ************* */
+
+/* ******** TIMERS START ************* */
 // Code copied from my old homework assignment
 // https://github.com/Pythonidaer/CodingQuiz/blob/main/assets/scripts/behavior.js
 // countdown() decreases the time perpetually by calling the timer() - 60-1;
@@ -40,9 +57,10 @@ function timer() {
     alert(`Game over! You typed an average of ${counter} words per minute.`);
   }
 }
+/* ******** TIMERS END ************* */
 
-// This loop adds the <span class="black"><span> around each letter
-// For letters only though: no spans are added to the cases
+/* ******** RECONSTRUCT PARAGRAPH START ************* */
+// This loop adds the <span class="black"><span> around each letter/number
 for (let i = 0; i < words.textContent.length; i++) {
   switch (words.innerHTML[i]) {
     case " ":
@@ -59,12 +77,13 @@ for (let i = 0; i < words.textContent.length; i++) {
       spanChars.push(spanAdder[0] + words.innerHTML[i] + spanAdder[2]);
       break;
   }
-  // spanChars.push(spanAdder[0] + words.innerHTML[i] + spanAdder[2]);
 }
 
 // This recreates the paragraph, this time with individual span tags per letter
 words.innerHTML = spanChars.join("");
+/* ******** RECONSTRUCT PARAGRAPH END ************* */
 
+/* ******** IDENTIFY SPAN CLASSES START ************* */
 // This gets us a NodeList of span.black
 let spans = document.querySelectorAll("span.black");
 function getSpans() {
@@ -80,7 +99,6 @@ function getWordsCounted() {
   wordsCounted = document.querySelectorAll(
     "span.red, span.counter, span.black"
   );
-
   for (let i = 0; i < wordsCounted.length; i++) {
     if (Boolean(wordsCounted[i + 1])) {
       if (
@@ -93,20 +111,15 @@ function getWordsCounted() {
   }
   return counter;
 }
+/* ******** IDENTIFY SPAN CLASSES END ************* */
 
+/* ******** KEYBOARD PRESSES COMPARE TO FIRST BLACK SPAN START ************* */
 // This demo searches only for the first letter
 document.addEventListener("keydown", (e) => {
-  //   if (String(e.key) === spans[0].textContent.toLowerCase()) {
   if (String(e.key) === spans[0].textContent) {
     spans[0].classList.toggle("black");
     spans[0].classList.toggle("red");
   }
   getSpans();
 });
-
-/*
-What do I want to do next? 
-I want a user button to start the game
-
-
-*/
+/* ******** KEYBOARD PRESSES COMPARE TO FIRST BLACK SPAN END ************* */
