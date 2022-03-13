@@ -123,7 +123,7 @@ function getWordsCounted() {
 /* ******** KEYBOARD PRESSES COMPARE TO FIRST BLACK SPAN START ************* */
 // This demo searches only for the first letter
 document.addEventListener("keydown", (e) => {
-  if (String(e.key) === " ") return false;
+  if (String(e.key) === " ") e.preventDefault();
   if (String(e.key) === spans[0].textContent) {
     spans[0].classList.toggle("black");
     spans[0].classList.toggle("red");
