@@ -35,7 +35,7 @@ header h1 {
 
 .container {
   width: 550px;
-  margin: 3rem auto 0;
+  margin: 3rem auto;
   text-align: justify;
   text-indent: 2rem;
 }
