@@ -14,6 +14,13 @@ let timeInBox = document.getElementById("timer");
 let timeRemaining = 60;
 // will be used to count each word (red char left of counter char = 1 word)
 let callCountDown;
+let body = document.querySelector("body");
+
+// Trying to hack mobile to make keyboard popup for touch screen usage
+function getResolution() {
+  if (screen.width > 768) body.contentEditable = false;
+}
+getResolution();
 
 /* ******** BUTTONS START ************* */
 // Start button
