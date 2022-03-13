@@ -15,6 +15,8 @@ let timeRemaining = 60;
 // will be used to count each word (red char left of counter char = 1 word)
 let callCountDown;
 let body = document.querySelector("body");
+let container = document.querySelector(".container");
+let btnContainer = document.querySelector(".btn-container");
 
 // Trying to hack mobile to make keyboard popup for touch screen usage
 function getResolution() {
@@ -28,6 +30,8 @@ const startBtn = document.querySelector(".startBtn");
 startBtn.addEventListener("click", () => {
   timer();
   startBtn.disabled = true;
+  btnContainer.style.display = "none";
+  container.style.marginTop = "3rem";
 });
 // How To Play button
 const infoBtn = document.querySelector(".infoBtn");
@@ -36,10 +40,6 @@ infoBtn.addEventListener("click", () => {
      1. Click 'START GAME' to begin the 60-second timer
      2. Type as many words as you can (letters/numbers only)
      3. When the game ends, words typed per minute pops up
-
-NOTES:
-     4. Not configured for mobile use 😢
-     5. Find me on LinkedIn: jonamichahammo
   `);
 });
 /* ******** BUTTONS END ************* */
